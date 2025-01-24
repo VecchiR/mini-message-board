@@ -6,9 +6,12 @@
 
 <body>
     <%- include('partials/navbar', {links}) %>
-    <h1>Type your beautiful message</h1>
-    <input type="text" placeholder="User">
-    <input type="text" placeholder="Message">
+    <form method="POST" action="/new">
+      <h1>Type your beautiful message</h1>
+      <input type="text" placeholder="User">
+      <input type="text" placeholder="Message">
+      <button type="submit">Submit</button>
+    </form>
 </body>
 
 </html>
