@@ -3,7 +3,7 @@ const { Router } = require("express");
 const router = Router();
 
 router.get('/', (req, res) => {
-    res.send('on new now');
+    res.render('form', {title: 'New message form'});
 });
 
 module.exports = router;
