@@ -28,5 +28,7 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/new', newRouter);
 app.use('/', indexRouter);

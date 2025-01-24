@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const messages = require('../models/messages');
 
 const router = Router();
 
@@ -7,7 +8,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    res.send('yas');
+    const messageUser = req.body.messageUser;
+    const messageText = req.body.messageText;
+    messages.push({ text: messageText, user: messageUser, added: new Date() });
+    res.redirect('/');
 });
 
 module.exports = router;
