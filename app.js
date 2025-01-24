@@ -1,6 +1,7 @@
 const express = require("express");
-const indexRouter = require("./routes/indexRouter");
 const path = require("node:path");
+const indexRouter = require("./routes/indexRouter");
+const newRouter = require("./routes/newRouter");
 
 
 const app = express();
@@ -15,4 +16,5 @@ app.listen(PORT, () => {
 });
 
 
-app.get('/', indexRouter);
+app.use('/new', newRouter);
+app.use('/', indexRouter);
