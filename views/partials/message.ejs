@@ -1,5 +1,7 @@
 <li>
+    <% const href = `/message/${message.id}`%>
     <span>User: <span><%= message.user.length <= 10 ? message.user : message.user.substring(0,10)+'...' %></span></span>
     <span>Message: <span><%= message.text.length <= 20 ? message.text : message.text.substring(0,20)+'...' %></span> </span>
-    <a href="/">details</a>
+    <span>id: <span> <%= message.id %> </span></span>
+    <a href=<%=href%>>details</a>
 </li>

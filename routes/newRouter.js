@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     const messageUser = req.body.messageUser;
     const messageText = req.body.messageText;
-    messages.push({ text: messageText, user: messageUser, added: new Date() });
+    messages.messageList.push({ id: ++messages.messageCount , text: messageText, user: messageUser, added: new Date() });
     res.redirect('/');
 });
 
