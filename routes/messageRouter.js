@@ -1,11 +1,8 @@
 const { Router } = require("express");
-const messages = require('../models/messages');
+const messagesController = require("../controllers/messageController");
 
 const router = Router();
 
-router.get('/:messageId', (req, res) => {
-    const message = messages.messageList.find(msg => msg.id === Number(req.params.messageId));
-    res.render('messageDetails', { message });
-});
+router.get('/:messageId', messagesController.getMessage);
 
 module.exports = router;

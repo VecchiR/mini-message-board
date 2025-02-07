@@ -1,10 +1,8 @@
 const { Router } = require("express");
-const messages = require('../models/messages.js');
+const messagesController = require("../controllers/messageController");
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.render("index", { title: "Mini Messageboard", messages: messages.messageList })
-});
+router.get('/', messagesController.getAllMessages);
 
 module.exports = router;
